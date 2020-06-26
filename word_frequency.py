@@ -1,3 +1,7 @@
+
+string = string.lower()
+print(message.lower())
+
 my_stop_words = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
@@ -12,8 +16,24 @@ def remove_my_stop_words(sentence):
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    # Your code will go here. You can write additional functions if you want, and call them inside this function.
+    # list = ['a','b','a','c','d','c','c']
+frequency = {}
+for item in list:
+   if (item in frequency):
+      frequency[item] += 1
+   else:
+      frequency[item] = 1
+for key, value in frequency.items():
+        print("% s -> % d" % (key, value))
+   #Your code will go here. #You can write additional functions if you want, and call them inside this function.
     # first open the file
+    file_object = open('real_love.txt')
+data = file_object.read()
+        print(data)
+file_object.close()
+    
+    
+    
     with open(file) as f:
         lyrics = f.readlines()
         word_list = [line.split() for line in lyrics]
