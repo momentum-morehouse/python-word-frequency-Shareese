@@ -1,8 +1,13 @@
-STOP_WORDS = [
+my_stop_words = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
+def remove_my_stop_words(sentence):
+    tokens = sentence.split(" ")
+    tokens_filtered= [word for word in text_tokens if not word in my_stopwords]
+    return (" ").join(tokens_filtered)
+    print(filtered_text)
 
 
 def print_word_freq(file):
@@ -30,3 +35,30 @@ if __name__ == "__main__":
     else:
         print(f"{file} does not exist!")
         exit(1)
+# define punctuation
+punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+my_str = "You see I'm searching for a real love.."
+
+# To take input from the user
+# my_str = input("Enter a string: ")
+
+# remove punctuation from the string
+def remove_punctuation(text):
+    result = []
+    for char in text:
+        if char not in string.punctuation:
+            result.append(char)
+    return "".join(result)
+
+
+# display the unpunctuated string
+print(no_punct)
+
+from collections import Counter
+def word_count(fname):
+        with open(fname) as f:
+                return Counter(f.read().split())
+
+print("Number of words in the file :",word_count("real_love.txt"))
+
